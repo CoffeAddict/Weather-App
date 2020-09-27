@@ -93,7 +93,7 @@ function getWeather (lat,lon) {
     }
 
 
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=39fad7324f81694a6f2fa5b634959b9e&lon=${lon}&lat=${lat}&temp=celsius&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=39fad7324f81694a6f2fa5b634959b9e&lon=${lon}&lat=${lat}&temp=celsius&units=metric`)
     .then(response => response.json())
     .then(data => {
         weather.city = data.city.name
