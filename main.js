@@ -1,3 +1,20 @@
+let gradients = {
+    day_1: 'background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);',
+    day_2: 'background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);',
+    day_3: 'background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%); background-blend-mode: screen;',
+    day_4: 'background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; background-blend-mode: multiply,multiply;background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; background-blend-mode: multiply,multiply;',
+    day_5: 'background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);',
+    day_6: 'background-image: linear-gradient(-225deg, #CBBACC 0%, #2580B3 100%);',
+    day_7: 'background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%); background-blend-mode: normal, lighten, soft-light;',
+    night_1: 'background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);',
+    night_2: 'background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);',
+    night_3: 'background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);',
+    night_4: 'background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; background-blend-mode: multiply,multiply;',
+    night_5: 'background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);',
+    night_6: 'background-image: linear-gradient(to top, #09203f 0%, #537895 100%);',
+    night_7: 'background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);'
+}
+
 function setBackgroundColor (weatherValue) {
     let day = new Date()
     let backgroundEl = document.getElementsByClassName("global-container")
@@ -5,50 +22,50 @@ function setBackgroundColor (weatherValue) {
         // Day
         switch (true) {
             case (weatherValue >= 801):
-                backgroundEl[0].setAttribute('style', 'background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);')
+                backgroundEl[0].setAttribute('style', gradients.day_1)
                 break
             case (weatherValue >= 800):
-                backgroundEl[0].setAttribute('style', 'background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);')
+                backgroundEl[0].setAttribute('style', gradients.day_2)
                 break
             case (weatherValue >= 701):
-                    backgroundEl[0].setAttribute('style', 'background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%); background-blend-mode: screen;')
-                    break
+                backgroundEl[0].setAttribute('style', gradients.day_3)
+                break
             case (weatherValue >= 600):
-                    backgroundEl[0].setAttribute('style', `background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; background-blend-mode: multiply,multiply;background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; background-blend-mode: multiply,multiply;`)
-                    break
+                backgroundEl[0].setAttribute('style', gradients.day_4)
+                break
             case (weatherValue >= 500):
-                    backgroundEl[0].setAttribute('style', `background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);`)
-                    break
+                backgroundEl[0].setAttribute('style', gradients.day_5)
+                break
             case (weatherValue >= 300):
-                    backgroundEl[0].setAttribute('style', `background-image: linear-gradient(-225deg, #CBBACC 0%, #2580B3 100%);`)
-                    break
+                backgroundEl[0].setAttribute('style', gradients.day_6)
+                break
             case (weatherValue >= 200):
-                    backgroundEl[0].setAttribute('style', `background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%); background-blend-mode: normal, lighten, soft-light;`)
-                    break
+                backgroundEl[0].setAttribute('style', gradients.day_7)
+                break
             }
         } else {
             // Night
             switch (true) {
                 case (weatherValue >= 801):
-                    backgroundEl[0].setAttribute('style', 'background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);')
+                    backgroundEl[0].setAttribute('style', gradients.night_1)
                     break
                 case (weatherValue >= 800):
-                        backgroundEl[0].setAttribute('style', 'background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);')
+                        backgroundEl[0].setAttribute('style', gradients.night_2)
                     break
                 case (weatherValue >= 701):
-                    backgroundEl[0].setAttribute('style', 'background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);')
+                    backgroundEl[0].setAttribute('style', gradients.night_3)
                     break
                 case (weatherValue >= 600):
-                    backgroundEl[0].setAttribute('style', `background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; background-blend-mode: multiply,multiply;`)
+                    backgroundEl[0].setAttribute('style', gradients.night_4)
                     break
                 case (weatherValue >= 500):
-                    backgroundEl[0].setAttribute('style', `background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);`)
+                    backgroundEl[0].setAttribute('style', gradients.night_5)
                     break
                 case (weatherValue >= 300):
-                    backgroundEl[0].setAttribute('style', `background-image: linear-gradient(to top, #09203f 0%, #537895 100%);`)
+                    backgroundEl[0].setAttribute('style', gradients.night_6)
                     break
                 case (weatherValue >= 200):
-                    backgroundEl[0].setAttribute('style', `background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);`)
+                    backgroundEl[0].setAttribute('style', gradients.night_7)
                     break
         }
     }
