@@ -85,7 +85,7 @@ function successFunction (position) {
 }
 
 function errorFunction () {
-    console.error('Error trying to find location')
+    window.alert('Error trying to find location')
 }
 
 function setDataOnDOM (weatherData) {
